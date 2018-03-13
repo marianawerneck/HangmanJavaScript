@@ -1,0 +1,18 @@
+#botaoReiniciar p{
+background-color: #000080;
+color: white;
+text-align:center;
+width: 20%;
+margin-left:40%;
+
+}
+#botaoReiniciar{
+	margin-top: 1%;
+	display:none;
+}
+
+#botaoReiniciar p:hover{
+	background-color: #82a4ee;
+	cursor:pointer;
+	
+}
