@@ -25,7 +25,7 @@ function criaController(jogo){
     function guardaPalavraSecreta() {
 		var palavra = $('#entrada').val();
 		jogo.setPalavraSecreta(palavra);
-        mudaPlaceHolder("Digite uma letra");
+        mudaPlaceHolder("Pick a letter");
 		exibeLacunas();
 		
     };
@@ -36,10 +36,10 @@ function criaController(jogo){
 		var letra = $entrada.val();
 		verificaEstaEmLacuna(letra);
 		if(repetido == 1){
-			mudaPlaceHolder("Essa letra já foi descoberta");
+			mudaPlaceHolder("This letter was already found out");
 		}else{
 		jogo.processaChute(letra);
-		mudaPlaceHolder("Digite uma letra");
+		mudaPlaceHolder("Pick a letter");
 		exibeLacunas();
 		verificaFimDeJogo();
 		}
@@ -63,9 +63,9 @@ function criaController(jogo){
 	
 	function fimDeJogo(){
 		if(jogo.ganhou()){
-			mudaPlaceHolder("Você Ganhou!");
+			mudaPlaceHolder("You won!");
 		}else{
-			mudaPlaceHolder("Você Perdeu...");
+			mudaPlaceHolder("You lost...");
 		}
 		$entrada.prop("disabled",true);
 		$("#botaoReiniciar").css("display","block");
@@ -78,7 +78,7 @@ function criaController(jogo){
 	function refresh(){
 		jogo.reinicia();
 		$entrada.prop("disabled",false);
-		mudaPlaceHolder("Digite uma palavra");
+		mudaPlaceHolder("Choose the secret word");
 		$lacunas.empty();
 		$("#botaoReiniciar").css("display","none");
 		
